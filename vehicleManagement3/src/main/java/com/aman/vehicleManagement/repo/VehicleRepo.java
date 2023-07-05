@@ -18,6 +18,10 @@ public interface VehicleRepo extends JpaRepository<Vehicle,String>{
             "WHERE v.inspectionStatus = 'Pending'")
 	List<Vehicle> findPendingApprovals(Pageable pageable);
 	
+	Vehicle findByBelongsToUserId(int userId);
+	
+	@Query("SELECT v FROM Vehicle v WHERE v.belongsToUserId = :userId")
+	Vehicle getPendingVehicleByUserId(int userId);
 	
 	
 }

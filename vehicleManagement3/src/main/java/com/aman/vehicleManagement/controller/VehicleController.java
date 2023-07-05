@@ -9,16 +9,19 @@ import javax.validation.Valid;
 import javax.validation.Validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.aman.vehicleManagement.entity.Vehicle;
 import com.aman.vehicleManagement.entity.dto.RegisterVehicleDto;
+import com.aman.vehicleManagement.entity.dto.UpdateVehicleRegistrationDTO;
 import com.aman.vehicleManagement.entity.dto.VehicleDto;
 import com.aman.vehicleManagement.service.VehicleService;
 
@@ -36,7 +39,7 @@ public class VehicleController {
 	}
 	
 	@GetMapping("/{id}")
-	public List<VehicleDto> getAllVehicleDetailsByUserId(@PathVariable(name="id") Integer userId){
+	public VehicleDto getAllVehicleDetailsByUserId(@PathVariable(name="id") Integer userId){
 		return vehicleService.getVehicleDetailsByUserId(userId);
 	}
 	
@@ -50,8 +53,13 @@ public class VehicleController {
 		return vehicleService.getAllPendingVehicles(pageNo);
 	}
 	
-//	@GetMapping("/pendingapprovals/{pageno}")
-//	public List<Vehicle> getPendingVehicles(@PathVariable(name="pageno") Integer pageNo){
-//		return vehicleService.getAllPendingVehicles(pageNo);
-//	}
+//	@PutMapping("/approveorreject")
+//    public String updateApplication(@RequestBody UpdateVehicleRegistrationDTO updateVehicleRegistrationDTO) {
+//        boolean result = VehicleService.updateVehicle(updateVehicleRegistrationDTO);
+//
+//        if (result) {
+//            return "Done";
+//        }
+//        return "Error";
+//    }
 }

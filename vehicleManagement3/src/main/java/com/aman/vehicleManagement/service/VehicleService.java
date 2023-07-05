@@ -14,6 +14,7 @@ import com.aman.vehicleManagement.entity.Vehicle;
 import com.aman.vehicleManagement.entity.VehicleDetail;
 import com.aman.vehicleManagement.entity.VehicleType;
 import com.aman.vehicleManagement.entity.dto.RegisterVehicleDto;
+import com.aman.vehicleManagement.entity.dto.UpdateVehicleRegistrationDTO;
 import com.aman.vehicleManagement.entity.dto.VehicleDetailDto;
 import com.aman.vehicleManagement.entity.dto.VehicleDto;
 import com.aman.vehicleManagement.entity.dto.VehicleTypeDto;
@@ -66,20 +67,15 @@ public class VehicleService {
 		
 		
 	}
-	public List<VehicleDto> getVehicleDetailsByUserId(int userId){
-		List<VehicleDto> allVehicleDto = new ArrayList<>();
-		List<Vehicle> allVehicle=vehicleRepo.findAllByBelongsToUserId(userId);
-		
-		for(Vehicle ivehicle : allVehicle) {
-			VehicleDto temp = modelMapper.map(ivehicle,VehicleDto.class);
-			VehicleDetailDto vehicleDetailDto = modelMapper.map(ivehicle.getVehicleDetail(),VehicleDetailDto.class);
-			VehicleTypeDto vehicleTypeDto =  modelMapper.map(ivehicle.getVehicleType(),VehicleTypeDto.class);
-			temp.setVehicleDetailDto(vehicleDetailDto);
-			temp.setVehicleTypeDto(vehicleTypeDto);
-			
-			allVehicleDto.add(temp);
-		}
-		return allVehicleDto; 
+	public VehicleDto getVehicleDetailsByUserId(int userId){
+		Vehicle vehicle =  vehicleRepo.findByBelongsToUserId(userId);
+		VehicleDto temp = modelMapper.map(vehicle,VehicleDto.class);
+		VehicleDetailDto vehicleDetailDto = modelMapper.map(vehicle.getVehicleDetail(),VehicleDetailDto.class);
+		VehicleTypeDto vehicleTypeDto =  modelMapper.map(vehicle.getVehicleType(),VehicleTypeDto.class);
+		temp.setVehicleDetailDto(vehicleDetailDto);
+		temp.setVehicleTypeDto(vehicleTypeDto);
+		return temp;
+
 	}
 	
 	public void deleteVehicleDetailByResigtrationNo(String regNo) {
