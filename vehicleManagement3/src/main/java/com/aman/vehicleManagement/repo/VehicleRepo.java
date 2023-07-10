@@ -23,5 +23,8 @@ public interface VehicleRepo extends JpaRepository<Vehicle,String>{
 	@Query("SELECT v FROM Vehicle v WHERE v.belongsToUserId = :userId")
 	Vehicle getPendingVehicleByUserId(int userId);
 	
+	@Query("SELECT v FROM Vehicle v WHERE v.registrationNo = :registrationNo")
+	Vehicle getByResgistrationNo(String registrationNo);
+	
 	
 }

@@ -5,45 +5,47 @@ import java.util.Date;
 
 public class UpdateVehicleRegistrationDTO {
 	
-	private String RegistrationNo;
+	private String registrationNo;
 
-    private String InspectionStatus;
+    private String inspectionStatus;
 
-    private int InspectionByUserId;
-
-    private Date InspectedOn;
+    private int inspectedByUserId;
+//
+//    private Date inspectedOn;
 
 	public String getRegistrationNo() {
-		return RegistrationNo;
+		return registrationNo;
 	}
 
 	public void setRegistrationNo(String registrationNo) {
-		RegistrationNo = registrationNo;
+		this.registrationNo = registrationNo;
 	}
 
 	public String getInspectionStatus() {
-		return InspectionStatus;
+		return inspectionStatus;
 	}
 
 	public void setInspectionStatus(String inspectionStatus) {
-		InspectionStatus = inspectionStatus;
+		this.inspectionStatus = inspectionStatus;
 	}
 
-	public int getInspectionByUserId() {
-		return InspectionByUserId;
+	public int getInspectedByUserId() {
+		return inspectedByUserId;
 	}
 
-	public void setInspectionByUserId(int inspectionByUserId) {
-		InspectionByUserId = inspectionByUserId;
+	public void setInspectedByUserId(int inspectedByUserId) {
+		this.inspectedByUserId = inspectedByUserId;
 	}
 
-	public Date getInspectedOn() {
-		return InspectedOn;
-	}
+//	public Date getInspectedOn() {
+//		return inspectedOn;
+//	}
+//
+//	public void setInspectedOn(Date inspectedOn) {
+//		this.inspectedOn = inspectedOn;
+//	}
 
-	public void setInspectedOn(Date inspectedOn) {
-		InspectedOn = inspectedOn;
-	}
+	
     
     
 }

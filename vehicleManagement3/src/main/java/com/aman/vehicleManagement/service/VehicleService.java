@@ -1,6 +1,7 @@
 package com.aman.vehicleManagement.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.domain.PageRequest;
@@ -12,6 +13,7 @@ import com.aman.vehicleManagement.entity.Vehicle;
 import com.aman.vehicleManagement.entity.VehicleDetail;
 import com.aman.vehicleManagement.entity.VehicleType;
 import com.aman.vehicleManagement.entity.dto.RegisterVehicleDto;
+import com.aman.vehicleManagement.entity.dto.UpdateVehicleRegistrationDTO;
 import com.aman.vehicleManagement.entity.dto.VehicleDetailDto;
 import com.aman.vehicleManagement.entity.dto.VehicleDto;
 import com.aman.vehicleManagement.entity.dto.VehicleTypeDto;
@@ -48,16 +50,16 @@ public class VehicleService {
 		vehicleDetail.setRtoName(registerVehicleDto.getRtoName());
 		vehicleDetail.setRegistrationDate(registerVehicleDto.getRegistrationDate());
 		vehicleDetail.setRegistrationExpiresOn(registerVehicleDto.getRegistrationExpiresOn());
-		vehicleDetail.setRcDocUrl(registerVehicleDto.getRcDocUrl());
+//		vehicleDetail.setRcDocUrl(registerVehicleDto.getRcDocUrl());
 		vehicleDetail.setInsuranceCompanyName(registerVehicleDto.getInsuranceCompanyName());
 		vehicleDetail.setInsuranceNo(registerVehicleDto.getInsuranceNo());
 		vehicleDetail.setInsurancedOn(registerVehicleDto.getInsurancedOn());
 		vehicleDetail.setInsuranceExpiresOn(registerVehicleDto.getInsuranceExpiresOn());
-		vehicleDetail.setInsuranceCertificateDocUrl(registerVehicleDto.getInsuranceCertificateDocUrl());
+//		vehicleDetail.setInsuranceCertificateDocUrl(registerVehicleDto.getInsuranceCertificateDocUrl());
 		vehicleDetail.setPucCertificateNo(registerVehicleDto.getPucCertificateNo());
 		vehicleDetail.setPucValidUntil(registerVehicleDto.getPucValidUntil());
 		vehicleDetail.setPucIssuedOn(registerVehicleDto.getPucIssuedOn());
-		vehicleDetail.setPucDocUrl(registerVehicleDto.getPucDocUrl());
+//		vehicleDetail.setPucDocUrl(registerVehicleDto.getPucDocUrl());
 		vehicleDetail.setRegistrationNo(registerVehicleDto.getRegistrationNo());
 		VehicleType vehicleType = new VehicleType();
 		vehicleType = vehicleTypeRepo.getVehicleTypeById(registerVehicleDto.getVehicleTypeId());
@@ -112,4 +114,17 @@ public class VehicleService {
 		return allVehicleDto;
 
 	}
+	public boolean updateVehicleStatus(UpdateVehicleRegistrationDTO updateVehicleRegistrationDTO) {
+		Vehicle vehicle = vehicleRepo.getByResgistrationNo(updateVehicleRegistrationDTO.getRegistrationNo());
+        if (vehicle != null) {
+        	Date currentDate = new Date();
+            vehicle.setInspectionStatus(updateVehicleRegistrationDTO.getInspectionStatus());
+            vehicle.setInspectedOn(currentDate);
+            vehicle.setInspectedByUserId(updateVehicleRegistrationDTO.getInspectedByUserId());
+            vehicleRepo.save(vehicle);
+            return true;
+        }
+        return false;
+	}
+
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.aman.vehicleManagement.entity.Vehicle;
 import com.aman.vehicleManagement.entity.dto.RegisterVehicleDto;
+import com.aman.vehicleManagement.entity.dto.UpdateVehicleRegistrationDTO;
 import com.aman.vehicleManagement.entity.dto.VehicleDto;
 import com.aman.vehicleManagement.service.VehicleService;
 import com.aman.vehicleManagement.service.exceptions.InvalidDateException;
@@ -77,7 +78,14 @@ public class VehicleController {
 	public List<VehicleDto> getPendingVehicles(@PathVariable(name="pageno") Integer pageNo){
 		return vehicleService.getAllPendingVehicles(pageNo);
 	}
-	
+	@PutMapping("/approveorreject")
+	public ResponseEntity<?> updateVehicleStatus(@RequestBody UpdateVehicleRegistrationDTO updateVehicleRegistrationDTO) {
+        boolean result = vehicleService.updateVehicleStatus(updateVehicleRegistrationDTO);
+        if (result) {
+            return ResponseEntity.ok(result);
+        }
+        return ResponseEntity.badRequest().build();
+    }
 //	@PutMapping("/approveorreject")
 //    public String updateApplication(@RequestBody UpdateVehicleRegistrationDTO updateVehicleRegistrationDTO) {
 //        boolean result = VehicleService.updateVehicle(updateVehicleRegistrationDTO);

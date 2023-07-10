@@ -6,16 +6,16 @@ public class VehicleDetailDto {
 	private String rtoName;
 	private Date registrationDate;
 	private Date registrationExpiresOn;
-	private String rcDocUrl;
+//	private String rcDocUrl;
 	private String insuranceCompanyName;
 	private int insuranceNo;
 	private Date insurancedOn;
     private Date insuranceExpiresOn;
-    private String insuranceCertificateDocUrl;
+//    private String insuranceCertificateDocUrl;
     private int pucCertificateNo;
     private Date pucIssuedOn;
     private Date pucValidUntil;
-    private String pucDocUrl;
+//    private String pucDocUrl;
 	public String getRtoName() {
 		return rtoName;
 	}
@@ -34,12 +34,12 @@ public class VehicleDetailDto {
 	public void setRegistrationExpiresOn(Date registrationExpiresOn) {
 		this.registrationExpiresOn = registrationExpiresOn;
 	}
-	public String getRcDocUrl() {
-		return rcDocUrl;
-	}
-	public void setRcDocUrl(String rcDocUrl) {
-		this.rcDocUrl = rcDocUrl;
-	}
+//	public String getRcDocUrl() {
+//		return rcDocUrl;
+//	}
+//	public void setRcDocUrl(String rcDocUrl) {
+//		this.rcDocUrl = rcDocUrl;
+//	}
 	public String getInsuranceCompanyName() {
 		return insuranceCompanyName;
 	}
@@ -64,12 +64,12 @@ public class VehicleDetailDto {
 	public void setInsuranceExpiresOn(Date insuranceExpiresOn) {
 		this.insuranceExpiresOn = insuranceExpiresOn;
 	}
-	public String getInsuranceCertificateDocUrl() {
-		return insuranceCertificateDocUrl;
-	}
-	public void setInsuranceCertificateDocUrl(String insuranceCertificateDocUrl) {
-		this.insuranceCertificateDocUrl = insuranceCertificateDocUrl;
-	}
+//	public String getInsuranceCertificateDocUrl() {
+//		return insuranceCertificateDocUrl;
+//	}
+//	public void setInsuranceCertificateDocUrl(String insuranceCertificateDocUrl) {
+//		this.insuranceCertificateDocUrl = insuranceCertificateDocUrl;
+//	}
 	public int getPucCertificateNo() {
 		return pucCertificateNo;
 	}
@@ -88,11 +88,11 @@ public class VehicleDetailDto {
 	public void setPucValidUntil(Date pucValidUntil) {
 		this.pucValidUntil = pucValidUntil;
 	}
-	public String getPucDocUrl() {
-		return pucDocUrl;
-	}
-	public void setPucDocUrl(String pucDocUrl) {
-		this.pucDocUrl = pucDocUrl;
-	}
+//	public String getPucDocUrl() {
+//		return pucDocUrl;
+//	}
+//	public void setPucDocUrl(String pucDocUrl) {
+//		this.pucDocUrl = pucDocUrl;
+//	}
     
 }

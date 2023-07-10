@@ -18,16 +18,16 @@ public class RegisterVehicleDto {
 	
 	private int vehicleTypeId;
 
-	private Integer inspectedByUserId;
+//	private Integer inspectedByUserId;
 	
-	private Date inspectedOn;
+//	private Date inspectedOn;
 
 	private String rtoName;
 	
 	private Date registrationDate;
 	private Date registrationExpiresOn;
 	
-	private String rcDocUrl;
+//	private String rcDocUrl;
 	
 	private String insuranceCompanyName;
 	
@@ -36,7 +36,7 @@ public class RegisterVehicleDto {
 	private Date insurancedOn;
     private Date insuranceExpiresOn;
 	
-    private String insuranceCertificateDocUrl;
+//    private String insuranceCertificateDocUrl;
     
     private int pucCertificateNo;
     
@@ -45,7 +45,7 @@ public class RegisterVehicleDto {
     
     private Date pucValidUntil;
     
-    private String pucDocUrl;
+//    private String pucDocUrl;
 
 	public String getRegistrationNo() {
 		return registrationNo;
@@ -72,21 +72,21 @@ public class RegisterVehicleDto {
 		this.vehicleTypeId = vehicleTypeId;
 	}
 
-	public Integer getInspectedByUserId() {
-		return inspectedByUserId;
-	}
-
-	public void setInspectedByUserId(Integer inspectedByUserId) {
-		this.inspectedByUserId = inspectedByUserId;
-	}
-
-	public Date getInspectedOn() {
-		return inspectedOn;
-	}
-
-	public void setInspectedOn(Date inspectedOn) {
-		this.inspectedOn = inspectedOn;
-	}
+//	public Integer getInspectedByUserId() {
+//		return inspectedByUserId;
+//	}
+//
+//	public void setInspectedByUserId(Integer inspectedByUserId) {
+//		this.inspectedByUserId = inspectedByUserId;
+//	}
+//
+//	public Date getInspectedOn() {
+//		return inspectedOn;
+//	}
+//
+//	public void setInspectedOn(Date inspectedOn) {
+//		this.inspectedOn = inspectedOn;
+//	}
 
 	public String getRtoName() {
 		return rtoName;
@@ -112,13 +112,13 @@ public class RegisterVehicleDto {
 		this.registrationExpiresOn = registrationExpiresOn;
 	}
 
-	public String getRcDocUrl() {
-		return rcDocUrl;
-	}
-
-	public void setRcDocUrl(String rcDocUrl) {
-		this.rcDocUrl = rcDocUrl;
-	}
+//	public String getRcDocUrl() {
+//		return rcDocUrl;
+//	}
+//
+//	public void setRcDocUrl(String rcDocUrl) {
+//		this.rcDocUrl = rcDocUrl;
+//	}
 
 	public String getInsuranceCompanyName() {
 		return insuranceCompanyName;
@@ -152,13 +152,13 @@ public class RegisterVehicleDto {
 		this.insuranceExpiresOn = insuranceExpiresOn;
 	}
 
-	public String getInsuranceCertificateDocUrl() {
-		return insuranceCertificateDocUrl;
-	}
-
-	public void setInsuranceCertificateDocUrl(String insuranceCertificateDocUrl) {
-		this.insuranceCertificateDocUrl = insuranceCertificateDocUrl;
-	}
+//	public String getInsuranceCertificateDocUrl() {
+//		return insuranceCertificateDocUrl;
+//	}
+//
+//	public void setInsuranceCertificateDocUrl(String insuranceCertificateDocUrl) {
+//		this.insuranceCertificateDocUrl = insuranceCertificateDocUrl;
+//	}
 
 	public int getPucCertificateNo() {
 		return pucCertificateNo;
@@ -184,14 +184,14 @@ public class RegisterVehicleDto {
 		this.pucValidUntil = pucValidUntil;
 	}
 
-	public String getPucDocUrl() {
-		return pucDocUrl;
-	}
-
-	public void setPucDocUrl(String pucDocUrl) {
-		this.pucDocUrl = pucDocUrl;
-	}
-    
+//	public String getPucDocUrl() {
+//		return pucDocUrl;
+//	}
+//
+//	public void setPucDocUrl(String pucDocUrl) {
+//		this.pucDocUrl = pucDocUrl;
+//	}
+//    
     
 
 	

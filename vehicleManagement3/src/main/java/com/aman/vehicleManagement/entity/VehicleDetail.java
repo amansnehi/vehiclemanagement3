@@ -28,8 +28,8 @@ public class VehicleDetail {
 	@FutureOrPresent
 	private Date registrationExpiresOn;
 
-	@Column(length = 100)
-	private String rcDocUrl;
+//	@Column(length = 100)
+//	private String rcDocUrl;
 
 	@Column(length = 50)
 	private String insuranceCompanyName;
@@ -44,8 +44,8 @@ public class VehicleDetail {
 	@FutureOrPresent
 	private Date insuranceExpiresOn;
 
-	@Column(length = 100)
-	private String insuranceCertificateDocUrl;
+//	@Column(length = 100)
+//	private String insuranceCertificateDocUrl;
 
 	@Column
 	private int pucCertificateNo;
@@ -58,8 +58,8 @@ public class VehicleDetail {
 	@FutureOrPresent
 	private Date pucValidUntil;
 
-	@Column(length = 100)
-	private String pucDocUrl;
+//	@Column(length = 100)
+//	private String pucDocUrl;
 
 	@OneToOne
 	@JoinColumn(name = "registrationNo", referencedColumnName = "registrationNo")
@@ -98,13 +98,13 @@ public class VehicleDetail {
 		this.registrationExpiresOn = registrationExpiresOn;
 	}
 
-	public String getRcDocUrl() {
-		return rcDocUrl;
-	}
-
-	public void setRcDocUrl(String rcDocUrl) {
-		this.rcDocUrl = rcDocUrl;
-	}
+//	public String getRcDocUrl() {
+//		return rcDocUrl;
+//	}
+//
+//	public void setRcDocUrl(String rcDocUrl) {
+//		this.rcDocUrl = rcDocUrl;
+//	}
 
 	public String getInsuranceCompanyName() {
 		return insuranceCompanyName;
@@ -138,13 +138,13 @@ public class VehicleDetail {
 		this.insuranceExpiresOn = insuranceExpiresOn;
 	}
 
-	public String getInsuranceCertificateDocUrl() {
-		return insuranceCertificateDocUrl;
-	}
-
-	public void setInsuranceCertificateDocUrl(String insuranceCertificateDocUrl) {
-		this.insuranceCertificateDocUrl = insuranceCertificateDocUrl;
-	}
+//	public String getInsuranceCertificateDocUrl() {
+//		return insuranceCertificateDocUrl;
+//	}
+//
+//	public void setInsuranceCertificateDocUrl(String insuranceCertificateDocUrl) {
+//		this.insuranceCertificateDocUrl = insuranceCertificateDocUrl;
+//	}
 
 	public int getPucCertificateNo() {
 		return pucCertificateNo;
@@ -170,13 +170,13 @@ public class VehicleDetail {
 		this.pucValidUntil = pucValidUntil;
 	}
 
-	public String getPucDocUrl() {
-		return pucDocUrl;
-	}
-
-	public void setPucDocUrl(String pucDocUrl) {
-		this.pucDocUrl = pucDocUrl;
-	}
+//	public String getPucDocUrl() {
+//		return pucDocUrl;
+//	}
+//
+//	public void setPucDocUrl(String pucDocUrl) {
+//		this.pucDocUrl = pucDocUrl;
+//	}
 
 	public Vehicle getVehicle() {
 		return vehicle;
@@ -189,12 +189,13 @@ public class VehicleDetail {
 	@Override
 	public String toString() {
 		return "VehicleDetail [registrationNo=" + registrationNo + ", rtoName=" + rtoName + ", registrationDate="
-				+ registrationDate + ", registrationExpiresOn=" + registrationExpiresOn + ", rcDocUrl=" + rcDocUrl
-				+ ", insuranceCompanyName=" + insuranceCompanyName + ", insuranceNo=" + insuranceNo + ", insurancedOn="
-				+ insurancedOn + ", insuranceExpiresOn=" + insuranceExpiresOn + ", insuranceCertificateDocUrl="
-				+ insuranceCertificateDocUrl + ", pucCertificateNo=" + pucCertificateNo + ", pucIssuedOn=" + pucIssuedOn
-				+ ", pucValidUntil=" + pucValidUntil + ", pucDocUrl=" + pucDocUrl + ", vehicle=" + vehicle + "]";
+				+ registrationDate + ", registrationExpiresOn=" + registrationExpiresOn + ", insuranceCompanyName="
+				+ insuranceCompanyName + ", insuranceNo=" + insuranceNo + ", insurancedOn=" + insurancedOn
+				+ ", insuranceExpiresOn=" + insuranceExpiresOn + ", pucCertificateNo=" + pucCertificateNo
+				+ ", pucIssuedOn=" + pucIssuedOn + ", pucValidUntil=" + pucValidUntil + ", vehicle=" + vehicle + "]";
 	}
+
+	
 
 	
 
